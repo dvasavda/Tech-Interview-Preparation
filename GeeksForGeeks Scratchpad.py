@@ -683,11 +683,302 @@ class StringNumberEleven(object):
         return
 
 
+# Find words which are greater than length k
+class StringNumberThirteen(object):
+    def run(self, str1, k):
+        '''
+        A string is given and you have to find all the words (substrings separated by a space) which are greater than given length k.
 
-# Check if string contains a special character
-class StringNumberTwelve(object):
+        Examples:
+
+        Input : str = "hello geeks for geeks
+                is computer science portal"
+                k = 4
+        Output : hello geeks geeks computer
+                science portal
+        Explanation : The output is list of all
+        words that are of length more than k.
+
+        Input : str = "string is fun in python"
+                k = 3
+        Output : string python
+        '''
+        # Plan:
+        # split string on ''
+        # count length of each index
+        # if count == k:
+        #   print (split_string[i])
+
+        split_string = str1.split(' ')
+        n = len(split_string)
+
+        for i in range(n):
+            char_count = len(split_string[i]) # iterate over each word and get length
+            if char_count > k: # if word length is greater than specified, then print
+                print(split_string[i])
+
+
+        return
+
+# Remove i-th character from a string
+class StringNumberFourteen(object):
+    def run(self, str1, ithcharacter):
+        '''
+        Given the string, we have to remove the ith indexed character from the string.
+
+        In any string, indexing always start from 0. Suppose we have a string geeks then its indexing will be as –
+
+        g e e k s
+        0 1 2 3 4
+        Examples :
+
+
+
+        Input : Geek
+                i = 1
+        Output : Gek
+
+        Input : Peter
+                i = 4
+        Output : Pete
+        '''
+        # Plan:
+        # Typecast string into list() to separate character
+        # remove index of ithcharacter from list
+        # rejoin list using ''.join, and print
+
+        str_list = list(str1)
+
+        str_list.pop(ithcharacter)
+
+        joined_list = ''.join(str_list)
+
+        return joined_list
+
+
+# Permutation of a given string using inbuilt function
+class StringNumberTwenty(object):
     def run(self, str1):
+        from itertools import permutations
+        '''
+        A permutation, also called an “arrangement number” or “order”, is a rearrangement of the elements of an ordered list S into a one-to-one correspondence with S itself. A string of length n has n! permutation.
 
+        Examples:
+
+        Input :  str = 'ABC'
+        Output : ABC
+                ACB
+                BAC
+                BCA
+                CAB
+                CBA
+
+            '''
+        perm_list = permutations(str1)
+
+        for i in perm_list:
+            ''.join(i)
+            print(i)
+
+
+        return
+
+
+
+
+
+
+
+
+############################################
+# Dictionaries
+############################################
+
+# Sort Python dictionaries by Key or Value
+class DictNumberOne(object):
+    '''
+    Problem Statement – Here are the major tasks that are needed to be performed.
+
+    Create a dictionary and display its keys alphabetically.
+    Display both the keys and values sorted in alphabetical order by the key.
+    Same as part (ii), but sorted in alphabetical order by the value.
+    '''
+    # Syntax:
+    #   mydict[key] = "value"
+    #   Key : Value
+    #   2 : 56
+
+    # Step 1: Display the Keys alphabetically
+    def part_one(self):
+        # Declare hash function
+        key_value = { }
+
+        # Intialize value
+        key_value[2] = 56
+        key_value[1] = 2
+        key_value[5] = 4
+        key_value[4] = 18
+        key_value[6] = 91
+        key_value[3] = 7
+
+        print('Task 1 - ')
+        print('Keys in order are: ')
+
+        # Iterate through each key and print
+        for key in (key_value.keys()):
+            print(key)
+
+        print('Printing keys as an array form: ')
+        print(key_value.keys())
+
+
+        return
+
+
+    # Print the values alphabetically
+    def part_two(self):
+        # Declare hash function
+        key_value = { }
+
+        # Intialize value
+        key_value[2] = 56
+        key_value[1] = 2
+        key_value[5] = 4
+        key_value[4] = 18
+        key_value[6] = 91
+        key_value[3] = 7
+
+        print('Values of the dictionary are: ')
+        for value in key_value.values():
+            print(value)
+
+
+        print('Values of the dictionary, in sorted form, are: ')
+        for sorted_value in sorted(key_value.values()):
+            print(sorted_value)
+
+    # Add values to the dict
+    def part_three(self):
+        word_dict = {
+            'Hello'     : 1,
+            'Hi'        : 2,
+            'Greetings' : 3,
+        }
+
+        # Update( {key: value} ) - adds a new key
+        word_dict.update( {'What Up' : 4} )
+
+        # Calling Update({}) on an existing key updates the value
+        word_dict.update(Hello = 99)
+
+        # Update( [ (key, value), (key, value) ] ) - can add multiple key:value pairs as tuples
+        word_dict.update([ ('Ok', 5), ('Where', 6) ])
+
+        print(word_dict)
+
+# Dict access time is O(1)
+
+# Handle missing keys in Python dictionary
+class DictNumberTwo(object):
+    '''
+    In python, dictionaries are containers which map one key to its value with access time complexity to be O(1). But in many applications, the user doesn’t know all the keys present in the dictionaries. In such instances, if user tries to access a missing key, an error is popped indicating missing keys.
+
+    # Python code to demonstrate Dictionary and
+    # missing value error
+
+    # initializing Dictionary
+    d = { 'a' : 1 , 'b' : 2 }
+
+    # trying to output value of absent key
+    print ("The value associated with 'c' is : ")
+    print (d['c'])
+    Error :
+
+    Traceback (most recent call last):
+    File "46a9aac96614587f5b794e451a8f4f5f.py", line 9, in
+        print (d['c'])
+    KeyError: 'c'
+
+    '''
+    def run(self):
+        # Use .get()
+        dictionary = {'a': 'b'}
+
+        dictionary.get('a', 'b')
+
+        return
+
+
+
+# Find sum of all items in the dictionary
+class DictNumberFour(object):
+    def run(self, dict):
+
+        sum = 0
+
+        for i in dict:
+            sum = sum + dict[i]
+
+
+        return sum
+
+
+# Delete an item in the dictionary
+class DictNumberFive(object):
+    def run(self, dict):
+
+        del dict['x']
+
+        return dict
+
+
+# Dictionary and counter in Python to find winner of election
+class DictNumberSix(object):
+
+    def run(self, votes_dict):
+        from collections import Counter
+
+        '''
+        Given an array of names of candidates in an election. A candidate name in array represents a vote casted to the candidate. Print the name of candidates received Max vote. If there is tie, print lexicographically smaller name.
+
+        Examples:
+
+        Input :  votes[] = {"john", "johnny", "jackie",
+                            "johnny", "john", "jackie",
+                            "jamie", "jamie", "john",
+                            "johnny", "jamie", "johnny",
+                            "john"};
+        Output : John
+        We have four Candidates with name as 'John',
+        'Johnny', 'jamie', 'jackie'. The candidates
+        John and Johny get maximum votes.› Since John
+        is alphabetically smaller, we print it.
+        '''
+
+        # Plan:
+        # Convert votes into dictionary using Counter(i)
+        # Create another dictionary and count the votes and put it as key
+        # Find maximum vote. Get list of candidates
+        # Sort list of candidates having same number of max votes
+
+        votes = Counter(votes_dict)
+
+        dict = {}
+
+        for value in votes.value():
+            dict[value] = []
+
+        for (key,value) in votes.iteritems():
+            dict[value].append(key)
+
+        max_vote = sorted(dict.keys(), reverse = True) [0]
+
+        if len(dict[max_vote]) > 1:
+            print(sorted(dict[max_vote]))
+
+
+
+        return
 
 
 
@@ -697,7 +988,13 @@ class StringNumberTwelve(object):
 #  Run code
 ############################################
 
-test = StringNumberEleven()
-print(test.run
-            ( 'GeeksForGeeks' )        )
+# test = StringNumberTwenty()
+# print(test.run
+#             ('ABC'))
 
+test = DictNumberFive()
+print(test.run({
+    'x' : 10,
+    'y' : 20,
+    'z' : 30
+ }))
