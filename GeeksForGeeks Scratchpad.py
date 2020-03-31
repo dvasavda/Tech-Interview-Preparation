@@ -212,7 +212,7 @@ class ArrayNumberFive(object):
         split_arr = []
 
         for i in range(0, k):
-            split_arr.append(arr[0])
+            split_arr.append(arr[0] )
             arr.pop(0)
 
         arr += split_arr
@@ -979,7 +979,6 @@ class DictNumberSix(object):
 
 
         return
-
 
 
 
