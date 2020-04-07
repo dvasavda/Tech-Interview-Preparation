@@ -24,6 +24,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
+        sum = 0
+         # Sort the array
+         # Take all of the last indices until value == 0
+         # add result and == sum
+
+        nums = sorted(nums)
+
+        for i in reversed(range(len(nums))):
+            if nums[i] < 0:
+                return sum
+            else:
+                sum += nums[i]
+
+        return sum
 
 
-        return
+test = Solution()
+print(test.maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
