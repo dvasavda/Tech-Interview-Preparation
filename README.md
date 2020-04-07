@@ -1,4 +1,4 @@
-# Tech Interview Practice Repository
+# Tech Interview Preparation Repository
 The goal is to understand a diverse set of problems to increase problem-solving capabilites with programming.
 
 ## Ideal Program Structure:
