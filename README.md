@@ -48,12 +48,6 @@ A personalized program can be structured as follows:
 `O(1) | Constant Time`
 
 
-## Principles to Follow:
-- Do not be daunted by immediately finding the most optimal algorithm. If you cannot think of one, come up with any solution in mind and begin developing. From there - refine & optimize your solution.
-- Start by reducing space complexity. Then move on to time complexity.
-- Do not forget that the `for in` operator has an iteration time complexity on its own
-
-
 ### Resources Used:
 
 https://medium.com/@helen_zhang/the-4-week-plan-to-nailing-your-next-coding-technical-interview-internship-level-c5368c47e1d
